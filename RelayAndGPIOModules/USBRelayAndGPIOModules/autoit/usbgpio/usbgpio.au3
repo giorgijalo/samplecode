@@ -11,9 +11,9 @@
 
 #include "CommInterface.au3"
 
-$port = 5
+$port = 9
 
-$hPort = _CommAPI_OpenCOMPort($port, 19200, 0, 8, 1)
+$hPort = _CommAPI_OpenCOMPort($port, 9600, 0, 8, 1)
 If @error Then MsgBox($MB_ICONERROR, "Failed to open port", _WinAPI_GetLastErrorMessage())
 
 _CommAPI_TransmitString($hPort, "gpio set 0" & @CR)
